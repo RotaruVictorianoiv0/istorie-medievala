@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoca Medievală - Călătorie în Timp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Fundal ce imită un pergament vechi */
+            background-color: #f4e8d1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+            font-family: 'Lora', serif;
+            color: #3e2723;
+        }
+        h1, h2, h3, .medieval-font {
+            font-family: 'Cinzel', serif;
+        }
+        .parchment-card {
+            background-color: rgba(255, 250, 240, 0.85);
+            border: 2px solid #8d6e63;
+            box-shadow: 4px 4px 15px rgba(93, 64, 55, 0.2);
+            border-radius: 4px;
+        }
+        .option-btn {
+            transition: all 0.2s ease;
+        }
+        .option-btn:hover:not(.disabled) {
+            background-color: #d7ccc8;
+            border-color: #5d4037;
+        }
+        .option-btn.selected {
+            background-color: #8d6e63;
+            color: #fff;
+            border-color: #4e342e;
+        }
+        .option-btn.correct {
+            background-color: #81c784;
+            color: #1b5e20;
+            border-color: #2e7d32;
+        }
+        .option-btn.incorrect {
+            background-color: #e57373;
+            color: #b71c1c;
+            border-color: #c62828;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Antet -->
+        <header class="text-center mb-12 parchment-card p-8 border-t-8 border-t-[#5d4037]">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#4e342e] mb-4">Epoca Medievală</h1>
+            <p class="text-xl italic text-[#5d4037]">O fereastră spre o mie de ani de istorie (Sec. V - Sec. XV)</p>
+            <div class="mt-6 flex justify-center space-x-4 text-3xl">
+                <span>🏰</span>
+                <span>⚔️</span>
+                <span>🛡️</span>
+                <span>👑</span>
+            </div>
+        </header>
+
+        <!-- Fereastra de Informații -->
+        <main class="space-y-8 mb-16">
+            
+            <section class="parchment-card p-6 md:p-8">
+                <h2 class="text-3xl font-bold border-b-2 border-[#8d6e63] pb-2 mb-4">1. Începutul și Cadrul Temporal</h2>
+                <p class="mb-4 leading-relaxed text-lg">
+                    Evul Mediu (sau Epoca Medievală) este o perioadă a istoriei europene care a început odată cu <strong>căderea Imperiului Roman de Apus în anul 476 d.Hr.</strong> și a durat până la tranziția spre Renaștere și Epoca Marilor Descoperiri (marcată simbolic de Căderea Constantinopolului în 1453 sau de descoperirea Americii în 1492).
+                </p>
+                <p class="leading-relaxed text-lg">
+                    Adesea împărțit în trei perioade: Evul Mediu Timpuriu (cunoscut greșit în trecut ca "Evul Întunecat"), Evul Mediu Mijlociu și Evul Mediu Târziu, această epocă a fost martora formării statelor europene moderne.
+                </p>
+            </section>
+
+            <section class="parchment-card p-6 md:p-8">
+                <h2 class="text-3xl font-bold border-b-2 border-[#8d6e63] pb-2 mb-4">2. Feudalismul: Structura Socială</h2>
+                <p class="mb-4 leading-relaxed text-lg">
+                    Societatea medievală era organizată pe baza <strong>feudalismului</strong>, un sistem ierarhic strict bazat pe deținerea pământului și pe loialitate.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-lg ml-4">
+                    <li><strong>Regele:</strong> Era conducătorul suprem, care oferea pământuri (feude) nobililor în schimbul sprijinului militar.</li>
+                    <li><strong>Nobilii (Seniorii):</strong> Controlau domeniile mari, administrau justiția și ofereau trupe regelui.</li>
+                    <li><strong>Cavalerii:</strong> Războinici profesioniști de elită, care serveau nobilii protejând domeniile. Respectau un cod strict al onoarei numit <em>cavalerism</em>.</li>
+                    <li><strong>Țăranii și Iobagii:</strong> Reprezentau majoritatea populației (peste 85%). Ei munceau pământul nobilului și îi ofereau o parte din recoltă în schimbul protecției fizice. Iobagii erau legați de glie (nu puteau părăsi pământul fără permisiune).</li>
+                </ul>
+            </section>
+
+            <section class="parchment-card p-6 md:p-8">
+                <h2 class="text-3xl font-bold border-b-2 border-[#8d6e63] pb-2 mb-4">3. Biserica și Viața Spirituală</h2>
+                <p class="mb-4 leading-relaxed text-lg">
+                    Biserica Catolică a fost cea mai puternică instituție a Evului Mediu în Europa de Vest. Papa deținea o putere enormă, uneori chiar peste regi și împărați.
+                </p>
+                <p class="leading-relaxed text-lg">
+                    Biserica controla educația, mănăstirile fiind singurele centre unde se scriau și se copiau cărți. De asemenea, Biserica a inițiat <strong>Cruciadele</strong> (secolele XI-XIII) – o serie de campanii militare religioase având ca scop eliberarea Țării Sfinte de sub controlul musulman.
+                </p>
+            </section>
+
+            <section class="parchment-card p-6 md:p-8">
+                <h2 class="text-3xl font-bold border-b-2 border-[#8d6e63] pb-2 mb-4">4. Castele, Orașe și Molime</h2>
+                <p class="mb-4 leading-relaxed text-lg">
+                    <strong>Castelele</strong> au fost inițial structuri de lemn, devenind ulterior fortărețe masive din piatră. Ele nu erau doar locuințe pentru nobili, ci și centre de apărare pentru populația locală în caz de asediu.
+                </p>
+                <p class="mb-4 leading-relaxed text-lg">
+                    Spre finalul Evului Mediu, orașele (burgurile) au început să se dezvolte, apărând breslele de meșteșugari și comerțul extins.
+                </p>
+                <p class="leading-relaxed text-lg font-semibold text-red-900">
+                    O lovitură cruntă pentru societatea medievală a fost "Moartea Neagră" (Ciuma Bubonică), care a lovit Europa la jumătatea secolului al XIV-lea (1347-1351), ucigând aproximativ o treime din populația continentului.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- Secțiunea de Joc / Quiz -->
+        <section id="quiz-section" class="parchment-card p-6 md:p-8 bg-gradient-to-b from-[#f4e8d1] to-[#e7d4b5]">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold mb-2">Jocul Cunoașterii</h2>
+                <p class="text-lg text-[#5d4037]">Răspunde la următoarele întrebări pe baza textului de mai sus pentru a-ți dovedi rangul de Cavaler Erudit!</p>
+            </div>
+
+            <div id="quiz-container" class="space-y-8">
+                <!-- Întrebările vor fi generate aici prin JavaScript -->
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="submit-btn" class="medieval-font bg-[#5d4037] hover:bg-[#3e2723] text-white text-xl py-3 px-8 rounded border-2 border-[#3e2723] transition shadow-lg transform hover:scale-105">
+                    Verifică Răspunsurile
+                </button>
+            </div>
+
+            <!-- Zona pentru Rezultat -->
+            <div id="result-container" class="hidden mt-8 p-6 text-center border-t-2 border-[#8d6e63]">
+                <h3 id="score-text" class="text-3xl font-bold mb-2"></h3>
+                <p id="rank-text" class="text-xl italic"></p>
+                <button id="retry-btn" class="mt-4 text-[#5d4037] underline hover:text-[#3e2723] font-semibold">Încearcă din nou</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Datele pentru Quiz
+        const quizData = [
+            {
+                question: "1. Ce eveniment marchează începutul Evului Mediu?",
+                options: [
+                    "Descoperirea Americii",
+                    "Căderea Imperiului Roman de Apus (476 d.Hr.)",
+                    "Începutul Renașterii",
+                    "Căderea Constantinopolului"
+                ],
+                correctAnswer: 1 // indexul 1
+            },
+            {
+                question: "2. Cum se numea sistemul social și politic dominant în Evul Mediu?",
+                options: [
+                    "Capitalism",
+                    "Democrație",
+                    "Feudalism",
+                    "Comunism"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "3. Cine forma majoritatea populației și era adesea legat de glie (pământ)?",
+                options: [
+                    "Cavalerii",
+                    "Nobilii",
+                    "Clerul (Preoții)",
+                    "Țăranii și Iobagii"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "4. Care a fost scopul principal al Cruciadelor?",
+                options: [
+                    "Eliberarea Țării Sfinte",
+                    "Descoperirea de noi rute comerciale spre Asia",
+                    "Răspândirea științei și a culturii",
+                    "Cucerirea Imperiului Roman de Apus"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "5. Cum s-a numit pandemia care a ucis o treime din populația Europei în sec. XIV?",
+                options: [
+                    "Gripa Spaniolă",
+                    "Moartea Neagră (Ciuma Bubonică)",
+                    "Holera",
+                    "Variola"
+                ],
+                correctAnswer: 1
+            }
+        ];
+
+        // Starea aplicației
+        let userAnswers = new Array(quizData.length).fill(null);
+        let isSubmitted = false;
+
+        const quizContainer = document.getElementById('quiz-container');
+        const submitBtn = document.getElementById('submit-btn');
+        const resultContainer = document.getElementById('result-container');
+        const scoreText = document.getElementById('score-text');
+        const rankText = document.getElementById('rank-text');
+        const retryBtn = document.getElementById('retry-btn');
+
+        // Generare interfață quiz
+        function renderQuiz() {
+            quizContainer.innerHTML = '';
+            
+            quizData.forEach((qData, qIndex) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'bg-white bg-opacity-40 p-4 rounded-lg border border-[#bcaaa4]';
+                
+                const qTitle = document.createElement('h3');
+                qTitle.className = 'text-xl font-bold mb-3 text-[#3e2723]';
+                qTitle.innerText = qData.question;
+                qDiv.appendChild(qTitle);
+
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'grid grid-cols-1 md:grid-cols-2 gap-3';
+
+                qData.options.forEach((option, oIndex) => {
+                    const btn = document.createElement('button');
+                    btn.className = `option-btn w-full text-left p-3 rounded border-2 border-[#bcaaa4] font-medium`;
+                    btn.innerText = option;
+                    
+                    // Starea activă dacă e selectat
+                    if (userAnswers[qIndex] === oIndex) {
+                        btn.classList.add('selected');
+                    }
+
+                    // Starea după trimitere
+                    if (isSubmitted) {
+                        btn.classList.add('disabled');
+                        if (oIndex === qData.correctAnswer) {
+                            btn.classList.add('correct');
+                        } else if (userAnswers[qIndex] === oIndex && oIndex !== qData.correctAnswer) {
+                            btn.classList.add('incorrect');
+                        }
+                    } else {
+                        btn.onclick = () => selectOption(qIndex, oIndex);
+                    }
+
+                    optionsDiv.appendChild(btn);
+                });
+
+                qDiv.appendChild(optionsDiv);
+                quizContainer.appendChild(qDiv);
+            });
+        }
+
+        // Funcția de selectare a unei opțiuni
+        function selectOption(qIndex, oIndex) {
+            if (isSubmitted) return;
+            userAnswers[qIndex] = oIndex;
+            renderQuiz();
+        }
+
+        // Verificarea răspunsurilor
+        submitBtn.addEventListener('click', () => {
+            // Verificăm dacă toate întrebările au răspuns
+            if (userAnswers.includes(null)) {
+                alert("Te rugăm să răspunzi la toate întrebările înainte de a verifica!");
+                return;
+            }
+
+            isSubmitted = true;
+            let score = 0;
+
+            userAnswers.forEach((ans, index) => {
+                if (ans === quizData[index].correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Actualizare UI
+            renderQuiz();
+            submitBtn.classList.add('hidden');
+            resultContainer.classList.remove('hidden');
+
+            scoreText.innerText = `Scor: ${score} din ${quizData.length}`;
+            
+            // Asignare rang
+            if (score === 5) {
+                rankText.innerText = "🏆 Rang Obținut: Rege Înțelept! Ești un maestru al istoriei medievale.";
+            } else if (score >= 3) {
+                rankText.innerText = "⚔️ Rang Obținut: Cavaler Viteaz! Ai cunoștințe solide.";
+            } else {
+                rankText.innerText = "🌾 Rang Obținut: Ucenic Țăran. Mai ai de studiat pergamentele!";
+            }
+            
+            // Scroll automat către rezultat
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Resetare joc
+        retryBtn.addEventListener('click', () => {
+            userAnswers = new Array(quizData.length).fill(null);
+            isSubmitted = false;
+            submitBtn.classList.remove('hidden');
+            resultContainer.classList.add('hidden');
+            renderQuiz();
+            document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Inițializare la încărcarea paginii
+        renderQuiz();
+
+    </script>
+</body>
+</html>
